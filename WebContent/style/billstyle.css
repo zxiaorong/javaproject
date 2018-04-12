@@ -1,0 +1,37 @@
+#addbox{
+				margin: 0 auto;
+				height: 400px;
+				width: 600px;
+				background-color: #f6fafd;
+			}
+			p{
+				font-weight: bold;
+				align-content: center;
+				
+				color: white;
+				
+				line-height: 50px;
+				margin-left: 10px;
+				
+			}
+			input{
+				align-content: center;
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			select{
+				align-content: center;
+				margin-top: 10px;
+				margin-left: 5px;
+			}
+			#ce{
+				margin-left: 50px;
+			}
+			#logo1{
+				width: 600px;
+				height: 50px;
+				background-color: #5a96d7;
+			}
+			#btnn{
+				background-color: #87c212;
+			}

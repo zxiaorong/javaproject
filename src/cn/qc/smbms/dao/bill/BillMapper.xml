@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.qc.smbms.dao.bill.BillMapper">
+	<!-- 复用的查询 -->
+	<sql id="selectBill"> billCode,productName,productDesc,productUnit,productCount,totalPrice,
+	isPayment,proName 
+	</sql>
+	<!-- 对象属性与数据表不一致的配置映射 -->
+	<resultMap type="Bill" id="billList" autoMapping="true">
+		<result property="proName" column="proName"/>
+	</resultMap>
+	<!-- 查询所有或 条件查询-->
+	<select id="getAllOrLikeBill" parameterType="Map" resultMap="billList" >
+	select b.id id, <include refid="selectBill"></include>
+	from smbms_bill b,smbms_provider p 
+	where b.providerId=p.id
+ 	<choose>
+ 		<when test="productName!=null and productName!=''">
+ 			and productName like CONCAT('%',#{productName},'%')
+ 		</when>
+ 		<when test="providerId!=0">
+ 			and providerId=#{id}
+ 		</when>
+ 		<otherwise>
+ 			and 1=1
+ 		</otherwise>
+ 	</choose>
+		 limit #{pageNum},#{pageSize}
+	</select>
+	<!-- 获取总条数 -->
+	<select id="count" resultType="int" >
+	 select count(id) 
+	 from smbms_bill
+	 where 
+	 <choose>
+ 		<when test="productName!=null and productName!=''">
+ 			productName like CONCAT('%',#{productName},'%')
+ 		</when>
+ 		<when test="providerId!=0">
+ 			providerId=#{id}
+ 		</when>
+ 		<otherwise>
+ 			1=1
+ 		</otherwise>
+ 	</choose>
+	 </select>
+	 <!-- bill添加 -->
+	 <insert id="addBill" parameterType="Bill" >
+	 	insert into smbms_bill(billCode,productName,productDesc,productUnit,productCount,totalPrice,isPayment,providerId) 
+		values(#{billCode},#{productName},#{productDesc},#{productUnit},#{productCount},#{totalPrice},#{isPayment},#{providerId})
+	 </insert>
+	 <delete id="deleteBill" parameterType="int">
+	 	delete from smbms_bill where id=#{id}
+	 </delete>
+	 <select id="getBillById" parameterType="int" resultType="Bill">
+		 select id,billCode,productName,productDesc,productUnit,productCount,totalPrice,
+		isPayment,providerId
+		 from smbms_bill
+		 where id=#{id}
+	 </select>
+	 <update id="updateBill">
+	 update smbms_bill set billCode=#{billCode},productName=#{productName},productDesc=#{productDesc},productUnit=#{productUnit},productCount=#{productCount},totalPrice=#{totalPrice},isPayment=#{isPayment},providerId=#{providerId}
+	 where id=#{id}
+	 </update>
+</mapper>

@@ -1,0 +1,141 @@
+	*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 1000px;
+				height: 600px;
+				margin: 0 auto;
+			}
+			#logo{
+				
+				background-color: #5a96d7;
+				width: 1000px;
+				height: 60px;
+			}
+			#logo p{
+				margin-left:30px ;
+				line-height: 60px;
+				font-weight: bold;
+				color: white;
+			}
+			#username{
+				border: 2px solid #d2e2ef;
+				width: 108px;
+				height: 15px;
+			}
+			#rolename {
+				border: 2px solid #d2e2ef;
+				width: 108px;
+				height: 20px;
+			}
+			#b1{
+				margin-top:20px ;
+				width: 110;
+				height: 20px;
+				float: left;
+				margin-left:10px ;
+			}
+			#b2{
+				margin-top:20px ;
+				width: 110;
+				height: 20px;
+				float: left;
+				margin-left:10px ;
+			}
+			#b3{
+				margin-top:20px ;
+				width: 110;
+				height: 20px;
+				float: left;
+				margin-left:30px ;
+			}
+			#btn{
+				width: 54px;
+				height: 15px;
+				background-image: url(../smbms/2.png);
+				border: 1px solid #d2e2ef;
+				box-shadow: ;
+			}
+			#nav{
+				height: 750px;
+				float: left;
+				width: 250px;
+				height: 600px;
+				background-color: #f5f5f5;
+				
+			}
+			#content{
+				float: left;
+				width: 750px;
+				height: 600px;
+				background-color: #f6fafd;
+			}
+			#nav ul{
+				
+				list-style-type: none;
+				margin: 0px;
+			}
+			
+			#nav li{
+				position: relative;
+				text-align: center;
+				border-bottom: 1px dashed black;
+				margin: 10px;
+				padding: 5px;
+				overflow: hidden;
+				color: #678dbe;
+				font-weight: bold;
+			}
+			
+			#nav li:hover{
+				background-color: lightgrey;
+			}
+			#b4{
+				width: 700px;
+				height:200px;
+			}
+			#table{
+				width: 700px;
+				height:200px;
+/* 				border-collapse: collapse; */
+				margin-left:10px;
+				border:1px solid black;
+				margin-top:20px
+			}
+			a{
+				text-decoration: none;
+			}
+			#tisi{
+				display: none;
+			}
+			#pagediv2{
+				height:50px;
+				margin-top:20px;
+				float:right;
+				margin-right:20px;
+				
+			}
+			#up1{
+				margin-top:20px;
+				line-height: 60px;
+				margin-left: 50px;
+			}
+			#btn1{
+				font-size: 12px;
+				background-color: #87c212;
+				width: 54px;
+				height: 15px;
+				border: 1px solid #d2e2ef;
+				color: white;
+				margin-left: 10px;
+			}
+			#title{
+				height: 50px;
+				background-color: lightskyblue;
+				width: 750px;
+				color: white;
+				font-weight: bold;
+				line-height: 50px;
+			}
+		
